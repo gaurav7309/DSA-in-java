@@ -1,0 +1,22 @@
+class Solution {
+    public String categorizeBox(int length, int width, int height, int mass) {
+
+        long volume = (long)length * width * height;
+
+        if((length >= 10000 || width >= 10000 || height >= 10000 || volume >= 1000000000L) && mass >= 100) {
+            return "Both";
+        }
+        else if(length >= 10000 || width >= 10000 || height >= 10000 || volume >= 1000000000L) {
+            return "Bulky";
+        }
+        else if(mass >= 100) {
+            return "Heavy";
+        }
+        else if(!(length >= 10000 || width >= 10000 || height >= 10000 || volume >= 1000000000L) && !(mass >= 100)) {
+            return "Neither";
+        }
+        else {
+            return "Heavy";
+        }
+    }
+}
