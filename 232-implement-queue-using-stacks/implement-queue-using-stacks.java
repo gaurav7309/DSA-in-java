@@ -1,5 +1,3 @@
-import java.util.*;
-
 class MyQueue {
     Stack<Integer> st1 = new Stack<>();
     Stack<Integer> st2 = new Stack<>();
@@ -7,27 +5,39 @@ class MyQueue {
     public MyQueue() {
         
     }
-    
+
     public void push(int x) {
-       
-        while(!st1.isEmpty()) {
+        st1.push(x);
+    }
+
+    public int pop() {
+        while(!st1.isEmpty()){
             st2.push(st1.pop());
         }
-          st1.add(x);
 
-        while(!st2.isEmpty()) {
+        int temp = st2.pop();
+
+        while(!st2.isEmpty()){
             st1.push(st2.pop());
         }
+
+        return temp;
     }
-    
-    public int pop() {
-        return st1.pop();
-    }
-    
+
     public int peek() {
-        return st1.peek();
+        while(!st1.isEmpty()){
+            st2.push(st1.pop());
+        }
+
+        int temp = st2.peek();
+
+        while(!st2.isEmpty()){
+            st1.push(st2.pop());
+        }
+
+        return temp;
     }
-    
+
     public boolean empty() {
         return st1.isEmpty();
     }
