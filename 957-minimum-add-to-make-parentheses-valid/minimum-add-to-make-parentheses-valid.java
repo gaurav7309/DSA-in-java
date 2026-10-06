@@ -17,19 +17,6 @@ class Solution {
     // after the complition of the for loop we have to check howmany character are the come corresponding them use the valid pranthesis
     // check whether the howmany ( are the come and the howmany are the )
     // are the come
-    int left = 0;
-    int right = 0;
-    while(!st.isEmpty()){
-        char temp = st.pop();
-        if(temp=='('){
-         left++;
-        }
-        else{
-            right++;
-        }
-    }
-    c+=left;
-    c+=right;
-    return c;
+        return st.size();
     }
 }
