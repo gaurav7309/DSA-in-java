@@ -4,14 +4,11 @@ class Solution {
       int odd = 0;
       for(int i = 0;i<n;i++){
        if(s.charAt(i)=='a'|| s.charAt(i)=='e'|| s.charAt(i)=='i'|| s.charAt(i)=='o'|| s.charAt(i)=='u'){
-       odd++;
+       return true;
        } 
       }  
-      if(odd!=0){
-       return true; 
-      }
-      else{
+      
         return false;
-      }
+      
     }
 }
