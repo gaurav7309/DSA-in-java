@@ -11,7 +11,7 @@ class Solution {
                String memp = bank[k];
                 int ch = 0; 
                 for(int l = 0;l<memp.length();l++){
-                   if(memp.charAt(l)=='1'){
+                   if(memp.charAt(l)==temp.charAt(j)){
                     c++;
                     ch++;
                      
