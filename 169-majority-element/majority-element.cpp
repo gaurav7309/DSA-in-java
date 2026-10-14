@@ -15,8 +15,33 @@ public:
     //     }
     //    }
     //    return val;
+
     // second approach forst sort then the middle element return 
-    sort(nums.begin(),nums.end()); 
-    return nums[nums.size()/2];
+
+    // sort(nums.begin(),nums.end()); 
+    // return nums[nums.size()/2];
+
+    // third approach
+
+    /* Important Technique = Boyer moore's votting also*/
+    int n = nums.size();
+   int val = nums[0];
+   int occ = 1;
+   for(int i = 1;i<n;i++){
+    if(occ==0){
+    val = nums[i];
+    occ+=1;
+    }
+    else if(val!=nums[i]){
+        occ-=1;
+        
+    }
+    else if(val==nums[i]){
+        occ+=1;
+    }
+   
+   }
+
+    return val;
     }
 };
