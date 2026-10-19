@@ -1,13 +1,23 @@
 class Solution {
     public List<Integer> targetIndices(int[] nums, int target) {
-       Arrays.sort(nums);
-       int n = nums.length;
-       ArrayList<Integer> arr = new ArrayList<>();
-       for(int i = 0;i<n;i++){
-        if(nums[i]==target){
-            arr.add(i);
-        }
-       } 
-       return arr;
+     PriorityQueue<Integer> pq = new PriorityQueue<>();
+     int n = nums.length;
+     for(int i =  0;i<n;i++){
+
+        pq.add(nums[i]);
+
+     }   
+     int  p = 0;
+     ArrayList<Integer> arr = new ArrayList<>();
+     while(pq.size()>0){
+     if(pq.peek()==target){
+    
+     arr.add(p);
+     
+     }
+      pq.remove();
+      p++;
+     }
+     return arr;
     }
 }
