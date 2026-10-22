@@ -10,7 +10,7 @@ class Solution {
        while(pq.size()!=0 && p<k){
        score+=pq.peek();
        int temp = pq.remove();
-       double  memp = (double)temp/3;
+       double  memp =temp/3.0;
        int ans =(int) Math.ceil(memp);
        pq.add(ans);
        p++;
