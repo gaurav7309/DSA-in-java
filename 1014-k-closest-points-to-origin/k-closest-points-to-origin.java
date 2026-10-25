@@ -10,7 +10,7 @@ class Triplet implements Comparable<Triplet>{
 
     }
   public int compareTo(Triplet t){
-        return (this.diss-t.diss);
+        return Integer.compare(this.diss,t.diss);
   }
 
 }
