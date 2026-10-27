@@ -1,37 +1,22 @@
 class Solution {
     public int lengthOfLongestSubstring(String s) {
-        HashMap<Character,Integer> h = new HashMap<>();
-        int n = s.length();
-        
-        int max = 0;
-        StringBuilder st = new StringBuilder();
-      for(int i = 0;i<n;i++){
-      st.append(s.charAt(i));
-      h.put(s.charAt(i),h.getOrDefault(s.charAt(i),0)+1);
-      if(st.length()==h.size()){
-        max = Math.max(max,st.length());
+      int n = s.length();
+      var freq_map = new HashMap<Character,Integer>();
+      int start = 0;
+      int max_len = Integer.MIN_VALUE;
+      for(int end  = 0;end<n;end++){
+      freq_map.put(s.charAt(end),freq_map.getOrDefault(s.charAt(end),0)+1);
+  
+      if(freq_map.size()!=end-start+1){
+      char temp = s.charAt(start);
+      freq_map.put(temp,freq_map.get(temp)-1);
+      if(freq_map.get(temp)==0){
+        freq_map.remove(temp);
       }
-      else{
-        boolean flag = true;
-
-        while(flag){
-       char temp = st.charAt(0);
-       st.deleteCharAt(0);
-       h.put(temp,h.getOrDefault((temp),0)-1);
-       if(h.get(temp)==0){
-        h.remove(temp);
-       }
-        if(st.length()==h.size()){
-            max = Math.max(max,st.length());
-            flag  = false;
-        }
-        else{
-            flag = true;
-        }
-        }
+      start++;
       }
-
-      }
-     return  max;
+      max_len = Math.max(max_len,end-start+1);
+      } 
+      return max_len==Integer.MIN_VALUE?0:max_len;
     }
 }
