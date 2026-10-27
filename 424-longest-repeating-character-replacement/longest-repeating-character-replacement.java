@@ -13,9 +13,7 @@ class Solution {
         if((end-start+1)-max>k){
         char temp = s.charAt(start);
         mp.put(temp,mp.get(temp)-1);
-        if(mp.get(temp)==0){
-            mp.remove(temp);
-        }
+       
 
         start++;
         }
