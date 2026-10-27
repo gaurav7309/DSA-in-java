@@ -2,16 +2,16 @@ class Solution {
     public int characterReplacement(String s, int k) {
         int n = s.length();
         HashMap<Character,Integer> mp = new HashMap<>();
-        String st = "";
+      
         int max = Integer.MIN_VALUE;
         int start = 0;
         int result = Integer.MIN_VALUE;
         for(int end = 0;end<n;end++){
-        st+=s.charAt(end);
+       
         mp.put(s.charAt(end),mp.getOrDefault(s.charAt(end),0)+1);
         max = Math.max(max,mp.get(s.charAt(end)));
         while((end-start+1)-max>k){
-        char temp = st.charAt(start);
+        char temp = s.charAt(start);
         mp.put(temp,mp.get(temp)-1);
         if(mp.get(temp)==0){
             mp.remove(temp);
