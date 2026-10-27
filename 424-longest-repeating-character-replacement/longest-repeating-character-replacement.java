@@ -10,7 +10,7 @@ class Solution {
        
         mp.put(s.charAt(end),mp.getOrDefault(s.charAt(end),0)+1);
         max = Math.max(max,mp.get(s.charAt(end)));
-        while((end-start+1)-max>k){
+        if((end-start+1)-max>k){
         char temp = s.charAt(start);
         mp.put(temp,mp.get(temp)-1);
         if(mp.get(temp)==0){
