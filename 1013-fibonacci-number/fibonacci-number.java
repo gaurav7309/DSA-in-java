@@ -1,8 +1,17 @@
 class Solution {
     public int fib(int n) {
-       if(n<=1){
-        return n;
-       } 
-       return fib(n-1)+fib(n-2);
+     var dp = new int[n+1];
+     Arrays.fill(dp,-1);
+    return solved(n,dp);
+    }
+    public static int solved(int n,int[] dp){
+        if(n<=1){
+            return n;
+        }
+        if(dp[n]!=-1){
+            return dp[n];
+        }
+        dp[n] = solved(n-1,dp)+solved(n-2,dp);
+        return dp[n];
     }
 }
