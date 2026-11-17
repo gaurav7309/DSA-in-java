@@ -8,7 +8,7 @@ class Solution {
                 nums1[size--] = nums1[p]; 
                 p--;
             }
-            else if( q>-1 ) {
+            else{
                 nums1[size--] = nums2[q];
                 q--;
             }
