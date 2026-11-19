@@ -10,8 +10,8 @@ class Solution {
         // for the calculating of the nse
         for(int i = 0;i<n;i++){
             while(!st2.isEmpty() && nums[i]<nums[st2.peek()]){
-                nse[st2.peek()] = i;
-                st2.pop();
+                nse[st2.pop()] = i;
+                
             }
             st2.push(i);
         }
@@ -19,8 +19,8 @@ class Solution {
 
         for(int i = n-1;i>=0;i--){
             while(!st1.isEmpty() && nums[i]<=nums[st1.peek()]){
-                pse[st1.peek()] = i;
-                st1.pop();
+                pse[st1.pop()] = i;
+                
             }
             st1.push(i);
         }
