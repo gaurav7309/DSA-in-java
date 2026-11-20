@@ -15,7 +15,7 @@ class Solution {
         java.util.Arrays.fill(nge,n);
         // find the min nse a;; the  smallest ele of all the ele
         for(int i = 0;i<n;i++){
-        while(!st.isEmpty() && nums[i]<nums[st.peek()]){
+        while(!st.isEmpty() && nums[i]<=nums[st.peek()]){
             nse[st.peek()] = i;
             
             st.pop();
@@ -26,7 +26,7 @@ class Solution {
         st.clear();
         // then find out the pre smallest ele
        for(int i = n-1;i>=0;i--){
-        while(!st.isEmpty() && nums[i]<=nums[st.peek()]){
+        while(!st.isEmpty() && nums[i]<nums[st.peek()]){
             pse[st.peek()] = i;
             
             st.pop();
@@ -37,7 +37,7 @@ class Solution {
          // then find out the pge forall teh ele
 
          for(int i = n-1;i>=0;i--){
-        while(!st.isEmpty() && nums[i]>=nums[st.peek()]){
+        while(!st.isEmpty() && nums[i]>nums[st.peek()]){
             pge[st.peek()] = i;
             
             st.pop();
@@ -48,7 +48,7 @@ class Solution {
 
          // then find out the nge
           for(int i = 0;i<n;i++){
-         while(!st.isEmpty() && nums[i]>nums[st.peek()]){
+         while(!st.isEmpty() && nums[i]>=nums[st.peek()]){
             nge[st.peek()] = i;
             
             st.pop();
