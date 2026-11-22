@@ -10,7 +10,7 @@ class Solution {
         // while(!drecrement_stack.isEmpty() && nums[i]<=nums[st.peek()]){
         //     st.push()
         // }  
-        if(nums[i]<=nums[drecrement_stack.peek()]){
+        if(nums[i]<nums[drecrement_stack.peek()]){
         drecrement_stack.push(i);
         }
          
