@@ -1,36 +1,33 @@
 class Solution {
     public List<List<Integer>> threeSum(int[] nums) {
-        HashSet<List<Integer>> st = new  HashSet<>();
         int n = nums.length;
+        HashSet<List<Integer>> st  = new HashSet<>();
         Arrays.sort(nums);
-
-        for(int i = 0;i<n;i++){
-        int low  = i+1;
-        int high = n-1;
-        while(low<high){
-
-            if(nums[i]+nums[low]+nums[high]==0){
-            List<Integer> temp = new ArrayList<>();
-            temp.add(nums[i]); temp.add(nums[low]); temp.add(nums[high]);
-            st.add(temp);
-            low++;
-            high--;
-            }
-            else if(nums[i]+nums[low]+nums[high]<0){
-                low++;
-            }
-            else{
-                high--;
+        for(int  i = 0;i<n;i++){
+            int p = i+1;
+            int q = n-1;
+            while(p<q){
+               
+                if(nums[i]+nums[p]+nums[q]==0){
+                   List<Integer> check = new ArrayList<Integer>();
+                   check.add(nums[p]); check.add(nums[q]); check.add(nums[i]); 
+                   st.add(check);
+                   p++;
+                   q--;
+                }
+                else if(nums[i]+nums[p]+nums[q]<0){
+                    p++;
+                }
+                else{
+                    q--;
+                }
             }
         }
-        }
-
-        // convert all the element to the kist .list
+        // the  conver the st tot he arraylost
         List<List<Integer>> ans = new ArrayList<>();
-
-        for(List<Integer> ele:st){
-            ans.add(ele);
-        }
-        return ans;
+        for(List<Integer> key: st){
+        ans.add(key);
+        } 
+     return ans;
     }
 }
