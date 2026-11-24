@@ -15,7 +15,7 @@ class Solution {
             end = Math.max(end,lastIndex);
             if(i==end){
                 partition.add(end-start+1);
-                start = i+1;
+                start = end+1;
             }
         }
         return partition;
