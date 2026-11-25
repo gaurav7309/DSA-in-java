@@ -28,9 +28,9 @@ class Solution {
     //nthen we have to remove  for=m th fonr of the string
     int i = 0;
     if(ans.length()>0 && ans.charAt(0)=='0'){
-    for(;i<ans.length();i++){
+    for(;i<ans.length();){
         if(ans.charAt(i)=='0'){
-            continue;
+           ans =  ans.deleteCharAt(i);
         }
         
         else{
@@ -40,8 +40,8 @@ class Solution {
 
     }
     }
-    String result = ans.substring(i);
-   
-    return result.isEmpty() ? "0" : result;
+    
+   String ans10 = ans.toString();
+    return  ans10.isEmpty()?"0":ans10;
         }
 }
