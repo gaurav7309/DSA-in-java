@@ -9,9 +9,9 @@ class Solution {
         for(i = 0;i<n;i++){
              boolean flag = false;
             while(!st.isEmpty() && nums[st.peek()]>nums[i]){
-            start = Math.min(start,st.peek());
-            st.pop();
-             
+            // start = st.peek();
+            start = Math.min(start,st.pop());
+            
            
             }
 
@@ -35,6 +35,6 @@ class Solution {
             st.push(j);
         }  
         int ans = (end-start+1);
-        return end > start ? end - start + 1 : 0;
+        return end>start?end-start+1:0;
     }
 }
